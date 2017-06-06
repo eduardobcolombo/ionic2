@@ -1,14 +1,33 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      OCRIonic
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
+  Posicione o documento próximo da camera e clique salvar
   <p>
     If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
   </p>
+  <ion-content padding class="buttons-components-page">
+    <ion-card>
+      <ion-card-content>
+        <img id="imageOCR" [src]="base64Image" *ngIf="base64Image" />
+      </ion-card-content>
+
+      <ion-item>
+        <button ion-button clear item-start (click)="takePicture()">Capturar</button>
+        <button ion-button clear item-end (click)="analyze()">Salvar</button>
+      </ion-item>
+    </ion-card>
+  </ion-content>
+  <ion-content>
+    <ion-item>
+      <ion-label>RG</ion-label>
+      <ion-input id='docRG'>0001</ion-input>
+    </ion-item>
+
+  </ion-content>
 </ion-content>
