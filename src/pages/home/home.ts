@@ -19,10 +19,14 @@ export class HomePage {
   }
 
   takePicture(){
+  // You can check the values here:
+  // https://github.com/driftyco/ionic-native/blob/master/src/plugins/camera.ts
     Camera.getPicture({
         destinationType: Camera.DestinationType.DATA_URL,
         targetWidth: 1000,
-        targetHeight: 1000
+        targetHeight: 1000,
+        allowEdit: true,
+        correctOrientation: true
     }).then((imageData) => {
       // imageData is a base64 encoded string
         this.base64Image = "data:image/jpeg;base64," + imageData;
